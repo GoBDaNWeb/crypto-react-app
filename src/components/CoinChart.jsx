@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { HistoricalChart } from "../config/api";
 import { Line } from "react-chartjs-2";
+import Loader from './Loader'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -36,8 +37,6 @@ const CoinInfo = ({ coin }) => {
     setHistoricData(data.prices);
   };
 
-  console.log(coin);
-
   useEffect(() => {
     fetchHistoricData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -47,7 +46,7 @@ const CoinInfo = ({ coin }) => {
   return (
       <div >
         {!historicData | flag===false ? (
-            <div>))</div>
+            <div className='flex w-full items-center justify-center'><Loader/></div>
         ) : (
           <>
             <Line

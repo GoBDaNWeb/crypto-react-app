@@ -40,7 +40,7 @@ export default function CoinList() {
     }, [])
 
     return (
-        <div className="flex flex-col gap-2 px-48 mt-10">
+        <div className="flex flex-col gap-2 xl:px-48 px-5 mt-10">
             <div>
                 <input 
                     onChange={(e) => onChange(e)}
